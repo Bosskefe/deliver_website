@@ -1,0 +1,665 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Navigation Bar*/
+
+#logo {
+  width: 60px;
+  height: 60px;
+}
+
+#cartimg {
+  width: 30px;
+  margin: auto;
+  height: auto;
+}
+
+ul {
+  position: fixed;
+  height: 65px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f3f3f3;
+  z-index: 2;
+}
+
+li {
+  float: left;
+  position: relative; /* Add this to set the parent element as the reference for the nested list */
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: lightblue;
+}
+
+.active {
+  background-color: lightblue;
+}
+li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  z-index: 2;
+  height: auto;
+}
+
+li:hover > ul {
+  display: block;
+}
+
+li ul li {
+  display: block;
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+li ul li:first-child {
+  border-top: none;
+}
+
+li ul li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+li ul li a:hover {
+  background-color: lightblue;
+}
+  /*HOME PAGE*/
+
+  .title{
+    min-width: 100vw;
+    min-height:100vh;
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: top;
+    flex-direction:column;
+    background-image:url('img/front.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1px;
+}
+.title h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 60px;
+    padding-left:15px;
+    padding-right:15px;
+    margin:10px;
+    color:white;
+    font-size:4rem;
+}
+.title h2{
+    padding-bottom: 50px;
+    padding-left:15px;
+    padding-right:15px;
+    font-size:3rem;
+    color: cornflowerblue; 
+}
+.search-bar{
+    width:100%;
+    max-width: 600px;
+    background-color:lightblue;
+    display: flex;
+    border-radius:60px;
+    padding: 8px 10px;
+}
+.search-bar input[type="text"]{
+    border-radius: 60px;
+    background:lightblue;
+    flex: 1;
+    border:0;
+    outline:none;
+    padding: 28px 19px;
+    font-size:20px;
+    color:rgb(0, 0, 0);
+   }
+  ::placeholder{
+    color:rgb(95, 112, 115);
+  }
+
+  .search-bar button img{
+    width: 25px;
+    padding-top: 2px;
+}
+.search-bar button{
+    
+     border: 0;
+     border-radius: 50%;
+     width: 60px;
+     height:60px;
+     background:lightblue;
+     cursor: pointer;
+}
+
+/*Order Now page*/
+
+.menu {
+  width: 100vw;
+  min-height:80vh;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  background-color: #ccc;
+  background-size:cover;
+}
+h2{
+  padding: 50px;
+}
+.menuMain h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 100%;
+}
+.menu-item {
+  min-width: 200px;
+  max-width: 450px;
+  margin-bottom: 80px;
+  background-color:  #f2f2f2;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.menu-item:hover img{
+  cursor: pointer;
+  transform:scale(1.2)
+}
+.item-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.item-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.item-details p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.item-details input[type="number"] {
+  width: 30%;
+  padding: 5px;
+  margin-right: 10px;
+  text-align: center;
+  border:black;
+}
+.add-to-cart {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: lightblue;
+}
+
+  /*Restaurant/restaurant1 page*/
+
+  #Restaurants {
+    height: 80vh;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+  }
+h2{
+
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .restaurant {
+    width: 100%;
+    height: 530px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .restaurant img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .restaurant:hover img{
+    cursor:pointer;
+    transform: scale(1.2)
+  }
+  
+  .restaurant-details {
+    padding: 10px;
+    text-align: center;
+  }
+  .restaurant-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .restaurant-details p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .visit-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .visit-button:hover {
+    background-color: #555;
+  }
+
+/* restaurant 2 Featured dishes styles */
+.featured-dishes {
+	padding: 4rem 0;
+	background-color: #f5f5f5;
+}
+
+.featured-dishes h2 {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+.dish {
+	background-color: #ffffff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin-bottom: 2rem;
+	max-width: 600px;
+	margin: 10px auto;
+  overflow: hidden;
+}
+
+.dish img {
+  width: 500px;
+  height: 300px;
+  border-radius: 10%;
+  transition: transform 0.5s ease;
+}
+.dish:hover img{
+  cursor: pointer;
+  transform:scale(1.1);
+}
+.dish h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.dish p {
+	font-size: 1.25rem;
+	margin-bottom: 2rem;
+}
+
+.price {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 2rem;
+}
+
+.add-to-cart-btn {
+	background-color: #0077c0;
+	color: #ffffff;
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+	background-color: #005a8c;
+}
+.dish .quantity{
+  width: 25%;
+}
+/*restaurant 3*/
+
+.donut-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.donut-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.donut-details {
+  font-size: 1.2rem;
+}
+.donut-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.donut-price {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #ff6600;
+}
+.quantity-input {
+  width: 4rem;
+}
+.add-to-cart {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.add-to-cart:hover {
+  background-color: #e65c00;
+}
+/*about us/contact us */
+
+.aboutUs {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+
+.aboutUs h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #333333;
+}
+
+.aboutUs p {
+  padding: 20px;
+  text-align: justify;
+  font-size: 18px;
+  color: #333333;
+}
+
+.forms {
+  position: relative;
+  margin: 20px 0;
+}
+
+label {
+  position: relative;
+  top: 50%;
+  font-size: 16px;
+  color: #333333;
+}
+
+input, textarea {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+textarea {
+  height: 120px;
+}
+
+.contact-btn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: rgb(39, 105, 127);
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.contact-btn:hover {
+  background-color:lightblue;
+}
+
+/*add to cart*/
+
+
+  #cart {
+    margin: 50px auto;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  #cart h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  #cart-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .cart-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .cart-item p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  #cart-total {
+    font-size: 2rem;
+  }
+
+  #reset-cart {
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  #reset-cart:hover {
+    background-color: lightblue;
+  }
+
+/*Log in page*/
+
+.account-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.account-type button {
+  width: 150px;
+  height: 70px; 
+  border: none; 
+  padding: 10px;
+  border-radius: 80px; 
+  color: black; 
+  font-size: 24px;
+  cursor: pointer; 
+}
+
+.account-type button:hover {
+ background-color:lightblue ; 
+}
+
+.login-form {
+ display: none;
+ width: 400px; 
+ margin: 0 auto; 
+ padding: 20px;
+ border: 1px solid #cccccc;
+ border-radius :10px ;
+}
+
+.login-form h2 {
+ text-align :center ;
+}
+
+.login-form label {
+ display :block;
+ margin-top :10px ;
+}
+
+.login-form input {
+ display :block;
+ width :100% ;
+ height :40px ;
+ border :1px solid #cccccc ;
+ border-radius :5px ;
+ padding :10px ;
+}
+
+.login-form button {
+ display:block; 
+ width: 100%;
+ height: 40px;
+ border:none;
+ border-radius :10px ;
+background-color:lightskyblue ;
+color:white ;
+font-size :24 px ;
+cursor:pointer ;
+}
+.login-form button:hover{
+  background-color:rgb(61, 61, 144);
+}
+
+.login-form p {
+  padding: 10px;
+text-align :center ;
+margin-top :20 px ;
+}
+
+.login-form a {
+text-decoration :none ;
+color:blue ;
+}
+
+.login-form a:hover {
+color:lightblue ;
+}
+
+/*signup*/
+
+.sign-up {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sign-up h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  color: #333333;
+  padding:10px;
+}
+
+.sign-up p {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333333;
+}
+
+.formsign {
+  position: relative;
+  margin: 20px 0;
+}
+
+.sign-up label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign-up input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.sign-up-btn {
+  align-items: right;
+  width: 18%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: lightskyblue;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+.sign-up-btn:hover{
+  color: blue;
+}

@@ -1,0 +1,186 @@
+<!--                    Group members
+                         Section = i
+  Name                                ID
+                                                                  
+Kefyalew belay                   RCD\3422\2013
+Mussie Mekdim                    RCD\3434\2013
+Abenezer yohannes
+Hailegebriel teklu
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MAKH Delivery</title>
+</head>
+
+<body>
+    <div class="navback">
+        <nav> 
+          <ul type="none" class="navbar">
+          <li><img src="img/makh.png" id="logo" alt="error loading image"></li>
+          <li><a class="active" href="#">HOME</a></li>
+          <li><a href="#Restaurants">RESTAURANTS</a>
+            <ul>
+              <li><a href="restaurant1.html">Fast food</a></li>
+              <li><a href="restaurant2.html">Bahel migib</a></li>
+              <li><a href="restaurant3.html">Delicious Donut</a></li>
+            </ul>
+          </li>
+          <li><a href="#OrderNow">ORDER NOW</a></li>
+          <li><a href="#AboutUs">ABOUT US</a></li>
+          <li style="float:right"><a href="login.html">LOGIN</a>
+          <li style="float: right;"><a href="cart.html"><img src="img/cart.png" id="cartimg" alt="error loading image"></a></li>
+        </ul>
+        </nav>
+    </div>
+        <div class="title">
+                <h1>Welcome To MAKH</h1>
+                <h2>The Fastest Food Delivery Service in Ethiopia.</h2>
+                <form action="" class="search-bar">
+                <input type="text" placeholder="Search.. eg restaurant.. food.." name="q">
+                <button type="submit"><img src="img/search.png"></button>
+                </form>  
+        </div>
+      <h2>Order Now</h2>          
+<main id="OrderNow">
+        <section class="menu">
+          <div class="menu-item">
+            <img src="img/cheeseburger.jpg" alt="Burger">
+            <div class="item-details">
+              <h3>Burger</h3>
+              <p>A classic burger with all the fixings.</p>
+              <div class="item-price">
+                <span>Birr 200.00</span>
+                <div class="quantity">
+                  <input type="number" value="1" id="burger-quantity">
+                  <button class="add-to-cart" data-item="Burger" data-price="200.00" data-quantity="1">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="menu-item">
+            <img src="img/fries.jpg" alt="Fries">
+            <div class="item-details">
+              <h3>Fries</h3>
+              <p>Crispy and delicious golden fries.</p>
+              <div class="item-price">
+                <span>Birr 150.00</span>
+                <div class="quantity">
+                  <input type="number" value="1" id="fries-quantity">
+                  <button class="add-to-cart" data-item="Fries" data-price="150.00" data-quantity="1">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="menu-item">
+            <img src="img/wrap.avif" alt="Wrap">
+            <div class="item-details">
+              <h3>Wrap</h3>
+              <p>A tasty wrap with your choice of filling.</p>
+              <div class="item-price">
+                <span>Birr 250.00</span>
+                <div class="quantity">
+                  <input type="number" value="1" id="wrap-quantity">
+                  <button class="add-to-cart" data-item="Wrap" data-price="250.00" data-quantity="1">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>  
+        
+<script>
+  // Add a click event listener to all "add-to-cart" buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Retrieve the item, price, and quantity data from the button's data attributes
+      const item = button.getAttribute('data-item');
+      const price = button.getAttribute('data-price');
+      const quantity = document.getElementById(button.parentNode.querySelector('input[type="number"]').id).value;
+
+      // Add the item, price, and quantity data to localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({
+        item: item,
+        price: price,
+        quantity: quantity
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+    });
+  });
+  </script>        
+ </main>
+
+<h2>Restaurants</h2>
+   <main id="Restaurants">
+       <div class="restaurant">
+        
+         <img src="img/fastfood.png" alt="Restaurant 1">
+         <div class="restaurant-details">
+           <h2>Fast food</h2>
+           <p>We have famous fastfoods that includes wraps and  gets delivered even faster.</p>
+           <a href="restaurant1.html" class="visit-button">Visit</a>
+         </div>
+       </div>
+       <div class="restaurant">
+         <img src="img/bahel.png" alt="Restaurant 2">
+         <div class="restaurant-details">
+           <h2>Bahel migib/ባህል ምግብ</h2>
+           <p>Variety of ethipian cultural foods with both vegeterian and meat dishes.</p>
+           <a href="restaurant2.html" class="visit-button">Visit</a>
+         </div>
+       </div>
+       <div class="restaurant">
+         <img src="img/delicious-donut.avif" alt="Restaurant 3">
+         <div class="restaurant-details">
+           <h2>Delicious Donut</h2>
+           <p>Delicious is a donut shop that offers a variety of sweet, fried pastries in various flavors and toppings.</p>
+           <a href="restaurant3.html" class="visit-button">Visit</a>
+         </div>
+       </div>
+     </main>
+
+  <main id="AboutUs">
+    <div class="aboutUs">
+      <h1>About Us</h1><p>
+      Makh is an innovative online food delivery service that brings delicious and healthy meals straight to your doorstep.
+       We're passionate about food and believe that everyone should have access to high-quality, nutritious meals, regardless of their busy schedules.
+        That's why we've created a platform that makes it easy to order food from some of the best restaurants in town, all with just a few clicks.
+      At Makh, we're committed to providing our customers with an exceptional experience from start to finish. Our team works hard to ensure that every meal is
+       prepared with care and attention to detail, using only the freshest ingredients available. We also offer a range of menu options to suit every taste
+        and dietary requirement, from vegan and gluten-free to low-carb and high-protein.
+      Whether you're looking for a quick lunchtime snack or a hearty dinner for the whole family, Makh has got you covered. With our easy-to-use website,
+       you can order food from your favorite restaurants in just a few minutes, and track your delivery in real-time. So why wait? Join the Makh community
+        today and experience the convenience and quality of our online food delivery service for yourself!</p>
+       <h1>Contact Us</h1>
+      <p>If you have any questions or inquiries, please feel free to contact us using the form below. We will get back to you as soon as possible.</p>
+      <form action="#" method="get">
+          <div class="forms">
+              <label for="text">Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required >
+          </div>
+          <div class="forms">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="forms">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Enter the subject of your message" required>
+          </div>
+          <div class="forms">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Send Message</button>
+      </form>
+  </div>
+
+  </main>
+</body>
+</html>

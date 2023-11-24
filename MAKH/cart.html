@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MAKH Delivery</title>
+</head>
+
+<body>
+    <div class="navback">
+        <nav>
+            <ul type="none" class="navbar">
+                <li><img src="img/makh.png" id="logo" alt="error loading image"></li>
+                <li><a  href="index.html">HOME</a></li>
+                <li style="float:right"><a href="login.html">LOGIN</a>
+                <li style="float: right;"><a class="active" href="cart.html"><img src="img/cart.png" id="cartimg" alt="error loading image"></a></li>
+            </ul>
+        </nav>
+    </div>
+<main id="cart">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <div id="cart-total"></div>
+  <button id="reset-cart" title="Click to submit form and reset cart">Checkout</button>
+</main>
+
+<script>
+  // Retrieve the cart data from localStorage
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Display the items in the cart
+  const cartItems = document.getElementById('cart-items');
+  let total = 0;
+  cart.forEach(item => {
+    const itemPrice = parseFloat(item.price) * parseInt(item.quantity);
+    total += itemPrice;
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <h3>${item.item}</h3>
+        <p>Birr ${item.price} x ${item.quantity}  = Birr ${itemPrice.toFixed(2)}</p>
+      </div>
+    `;
+  });
+
+  // Display the total price
+  const cartTotal = document.getElementById('cart-total');
+  cartTotal.innerHTML = `
+    <h3>Total: Birr ${total.toFixed(2)}</h3>
+  `;
+   // Add a click event listener to the reset button
+   const resetCartButton = document.getElementById('reset-cart');
+  resetCartButton.addEventListener('click', () => {
+    localStorage.removeItem('cart');
+    location.reload();
+  });
+</script>
+  
+    </body>
+</html>

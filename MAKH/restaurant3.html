@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MAKH Delivery</title>
+</head>
+
+<body>
+    <div class="navback">
+        <nav>
+            <ul type="none" class="navbar">
+                <li><img src="img/makh.png" id="logo" alt="error loading image"></li>
+                <li><a  href="index.html">HOME</a></li>
+                <li><a class="active" href="#restaurants">RESTAURANTS</a></li>
+                <li style="float:right"><a href="login.html">LOGIN</a>
+                <li style="float: right;"><a href="cart.html"><img src="img/cart.png" id="cartimg" alt="error loading image"></a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <style>
+      body{
+        align-items: center;
+          padding: 100px;
+          
+      }
+      h1{
+        text-align: center;
+      }
+  </style>
+    
+  <h1>Delicious Donuts</h1>
+
+  <div class="donut-container">
+    <img class="donut-img" src="img/chocolate-donut.jpg" alt="Chocolate Donut">
+    <div class="donut-details">
+      <p class="donut-name">Chocolate Donut</p>
+      <p class="donut-price">Price: 90 Birr</p>
+      <p> A classic chocolate donut with sprinkles.</p>
+        <input type="number" id="quantity-input" value="1" min="1" max="10" data-price="90" data-item="Chocolate Donut">
+      
+      <button class="add-to-cart" data-item="Chocolate Donut" data-price="90" data-quantity="1">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="donut-container">
+    <img class="donut-img" src="img/vanilla-donut.jpg" alt="Vanilla Donut">
+    <div class="donut-details">
+      <p class="donut-name">Vanilla Donut</p>
+      <p class="donut-price">Price: 80 Birr</p>
+      <p> A fluffy vanilla donut with a sweet glaze.</p>
+        <input type="number" id="quantity-input" value="1" min="1" max="10" data-price="80" data-item="Vanilla Donut">
+      
+      <button class="add-to-cart" data-item="Vanilla Donut" data-price="80" data-quantity="1">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="donut-container">
+    <img class="donut-img" src="img/blueberry-donut.jpg" alt="Blueberry Donut">
+    <div class="donut-details">
+      <p class="donut-name">Blueberry Donut</p>
+      <p class="donut-price">Price: 95 Birr</p>
+      <p> A fruity blueberry donut with a tangy drizzle.</p>
+      <input type="number" id="quantity-input" value="1" min="1" max="10" data-price="95" data-item="Blueberry Donut">
+      <button class="add-to-cart" data-item="Blueberry Donut" data-price="95" data-quantity="1">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="donut-container">
+    <img class="donut-img" src="img/strawberry-donut.jpg" alt="Strawberry Donut">
+    <div class="donut-details">
+      <p class="donut-name">Strawberry Donut</p>
+      <p class="donut-price">Price: 85 Birr</p>
+      <p> A pink strawberry donut with a creamyfilling.</p>
+      <input type="number" id="quantity-input" value="1" >
+      <button class="add-to-cart" data-item="Strawberry Donut" data-price="85.00" data-quantity="1">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="donut-container">
+    <img class="donut-img" src="img/caramel-donut.jpg" alt="Caramel Donut">
+    <div class="donut-details">
+      <p class="donut-name">Caramel Donut</p>
+      <p class="donut-price">Price: 100 Birr</p>
+      <p> A rich caramel donut with a crunchy topping.</p>
+      <input type="number" value="1" id="quantity-input">
+      <button class="add-to-cart" data-item="Caramel Donut" data-price="100.00" data-quantity="1">Add to Cart</button>
+    </div>
+  </div>
+  <div class="donut-container">
+    <img class="donut-img" src="img/raspberry-donut.jpg" alt="Raspberry Donut">
+    <div class="donut-details">
+      <p class="donut-name">Raspberry Donut</p>
+      <p class="donut-price">Price: 90 Birr</p>
+      <p> A tart raspberry donut with a sweet glaze.</p>
+      <input type="number" id="quantity-input" value="1" >      
+      <button class="add-to-cart" data-item="Raspberry Donut" data-price="90.00" data-quantity="1">Add to Cart</button>
+    </div>
+  </div>
+  
+<script>
+  // Add a click event listener to all "add-to-cart" buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Retrieve the item, price, and quantity data from the button's data attributes
+      const item = button.getAttribute('data-item');
+      const price = button.getAttribute('data-price');
+      const quantity = document.getElementById(button.parentNode.querySelector('input[type="number"]').id).value;
+
+      // Add the item, price, and quantity data to localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({
+        item: item,
+        price: price,
+        quantity: quantity
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+    });
+  });
+  </script>
+</body>
+</html>

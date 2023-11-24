@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MAKH Delivery</title><div class="navback">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul type="none" class="navbar">
+                <li><img src="img/makh.png" id="logo" alt="error loading image"></li>
+                <li><a  href="index.html">HOME</a></li>
+                <li><a href="#restaurants">RESTAURANTS</a></li>
+                <li><a href="#OrderNow">ORDER NOW</a></li>
+                <li><a href="#AboutUs">ABOUT US</a></li>
+                <li style="float:right"><a  class="active" href="login.html">LOGIN</a>
+                <li style="float: right;"><a href="cart.html"><img src="img/cart.png" id="cartimg" alt="error loading image"></a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <div class="account-type">
+        <!-- Add four buttons for each account type -->
+        <button id="type1">Customer</button> <!-- Replace with your account type name -->
+        <button id="type2">Delivery Man</button> <!-- Replace with your account type name -->
+        <button id="type3">Restaurant</button> <!-- Replace with your account type name -->
+        <button id="type4">Admin</button> <!-- Replace with your account type name -->
+    </div>
+
+    <div class="login-form" id="login-form">
+        <!-- Add a form for logging in -->
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <!-- Add an option to sign up -->
+        <p>Don't have an account? <a href="#" id="sign-up" >Sign up</a></p>
+    </div>
+
+    <!-- Add your custom HTML content here -->
+
+</div>
+
+<script>
+    // Add your custom JavaScript code here
+    // Get all account type buttons
+    var type1 = document.getElementById("type1");
+    var type2 = document.getElementById("type2");
+    var type3 = document.getElementById("type3");
+    var type4 = document.getElementById("type4");
+
+    // Get login form element
+    var loginForm = document.getElementById("login-form");
+
+    // Get sign up link element
+    var signUp = document.getElementById("sign-up");
+
+    // Add click event listener to each account type button
+    type1.addEventListener("click", function() {
+        // Show login form
+        loginForm.style.display = "block";
+        // Hide account type buttons
+        type1.style.display = "none";
+        type2.style.display = "none";
+        type3.style.display = "none";
+        type4.style.display = "none";
+    });
+
+    type2.addEventListener("click", function() {
+        // Show login form
+        loginForm.style.display = "block";
+        // Hide account type buttons
+        type1.style.display = "none";
+        type2.style.display = "none";
+        type3.style.display = "none";
+        type4.style.display = "none";
+    });
+
+    type3.addEventListener("click", function() {
+        // Show login form
+        loginForm.style.display = "block";
+        // Hide account type buttons
+        type1.style.display = "none";
+        type2.style.display = "none";
+        type3.style.display = "none";
+        type4.style.display = "none";
+    });
+
+    type4.addEventListener("click", function() {
+        // Show login form
+        loginForm.style.display = "block";
+        // Hide account type buttons
+        type1.style.display = "none";
+        type2.style.display = "none";
+        type3.style.display = "none";
+        type4.style.display = "none";
+    });
+
+    // Add click event listener to sign up link
+    signUp.addEventListener("click", function() {
+         // Redirect to sign up page
+         window.location.href = "sign-up.html"; // Replace with your sign up page URL
+     });
+     // Add submit event listener to login form
+     loginForm.addEventListener("submit", function(event) {
+              // Prevent default form submission behavior
+              event.preventDefault();
+              // Redirect to main page
+              window.location.href = "index.html"; // Replace with your main page URL
+          });
+</script>
+
+</body>
+</html>

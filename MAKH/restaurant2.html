@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MAKH Delivery</title>
+</head>
+
+<body>
+    <div class="navback">
+        <nav>
+            <ul type="none" class="navbar">
+                <li><img src="img/makh.png" id="logo" alt="error loading image"></li>
+                <li><a  href="index.html">HOME</a></li>
+                <li><a class="active" href="#restaurants">RESTAURANTS</a></li>
+                <li style="float:right"><a href="login.html">LOGIN</a>
+				<li style="float: right;"><a href="cart.html"><img src="img/cart.png" id="cartimg" alt="error loading image"></a></li>
+            </ul>
+        </nav>
+    </div>
+
+<body>
+	
+		
+	<main>
+		<section class="featured-dishes">
+			<h2>Featured Dishes</h2>
+			<div class="dish">
+				<img src="img/beyaynet.jpg" alt="Vegetarian Combo">
+				<h3>Vegetarian Combo/ በያይነት</h3>
+				<p>A delicious combination of Ethiopian vegetarian dishes, including lentil stew, cabbage, collard greens, and injera bread.</p>
+				<span class="price">Birr194.99</span>
+				<div class="quantity">
+				  <input type="number" value="1" id="item-quantity">
+				  <button class="add-to-cart" data-item="በያይነት/Beyaynet" data-price="194.99" data-quantity="1">Add to Cart</button>
+				</div>
+			</div>
+			<div class="dish">
+				<img src="img/doro-wot.avif" alt="Doro Wot">
+				<h3>Doro Wot</h3>
+				<p>A traditional Ethiopian chicken stew, simmered in a flavorful blend of spices and served with injera bread.</p>
+				<span class="price">Birr416.99</span><div class="quantity">
+					<input type="number" value="1" id="item-quantity">
+					<button class="add-to-cart" data-item="ዶሮ/Doro" data-price="416.99" data-quantity="1">Add to Cart</button>
+				  </div>
+			</div>
+			<div class="dish">
+				<img src="img/tibs.jpg" alt="Tibs">
+				<h3>Tibs</h3>
+				<p>A popular Ethiopian dish made with sautéed beef, onions, peppers, and spices, served with injera bread.</p>
+				<span class="price">Birr318.99</span>
+				<div class="quantity">
+					<input type="number" value="1" id="item-quantity">
+					<button class="add-to-cart" data-item="ጥብስ/Tibs" data-price="318.99" data-quantity="1">Add to Cart</button>
+				  </div>
+			</div>
+      <div class="dish">
+				<img src="img/kitfo.jpg" alt="Tibs">
+				<h3>kitfo</h3>
+				<p>A popular Ethiopian dish made with grided beef and spices, served with injera bread.</p>
+				<span class="price">Birr300</span>
+				<div class="quantity">
+					<input type="number" value="1" id="item-quantity">
+					<button class="add-to-cart" data-item="ክትፎ/Kitfo" data-price="300.00" data-quantity="1">Add to Cart</button>
+				  </div>
+			</div>
+		</section>
+  </main>
+	
+<script>
+	// Add a click event listener to all "add-to-cart" buttons
+	const addToCartButtons = document.querySelectorAll('.add-to-cart');
+	addToCartButtons.forEach(button => {
+	  button.addEventListener('click', () => {
+		// Retrieve the item, price, and quantity data from the button's data attributes
+		const item = button.getAttribute('data-item');
+		const price = button.getAttribute('data-price');
+		const quantity = document.getElementById(button.parentNode.querySelector('input[type="number"]').id).value;
+  
+		// Add the item, price, and quantity data to localStorage
+		let cart = JSON.parse(localStorage.getItem('cart')) || [];
+		cart.push({
+		  item: item,
+		  price: price,
+		  quantity: quantity
+		});
+		localStorage.setItem('cart', JSON.stringify(cart));
+	  });
+	});
+	</script>
+</body>
+</html>
